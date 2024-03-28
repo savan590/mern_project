@@ -1,0 +1,11 @@
+/* employeedetails.css */
+
+.employee-details {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .employee-details h2 {
+    margin-bottom: 20px;
+  }
+  

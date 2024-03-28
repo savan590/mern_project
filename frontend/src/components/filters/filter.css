@@ -1,0 +1,10 @@
+
+.filter-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .filter-form input[type="text"] {
+    margin-bottom: 20px;
+  }
+  
