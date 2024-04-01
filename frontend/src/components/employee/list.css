@@ -1,0 +1,12 @@
+
+.employee-list {
+    margin-top: 20px;
+  }
+  
+  .employee-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  

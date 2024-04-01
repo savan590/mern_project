@@ -1,10 +1,18 @@
-// departmentRoutes.js
 const express = require('express');
 const router = express.Router();
 const Department = require('../models/department');
+const authenticate = require('../middleware/requireAuth');
 
-// Create department
-router.post('/departments', async (req, res) => {
+router.get('/alldepartments',authenticate, async (req, res) => {
+    try {
+      const departments = await Department.find();
+      res.send(departments);
+    } catch (err) {
+      res.status(500).send(err);
+    }
+});
+
+router.post('/departments', authenticate,async (req, res) => {
   try {
     const { name } = req.body;
     const newDepartment = new Department({ name });
@@ -15,8 +23,7 @@ router.post('/departments', async (req, res) => {
   }
 });
 
-// Update department
-router.put('/departments/:id', async (req, res) => {
+router.put('/departments/:id',authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     const { name } = req.body;
@@ -27,8 +34,7 @@ router.put('/departments/:id', async (req, res) => {
   }
 });
 
-// Delete department
-router.delete('/departments/:id', async (req, res) => {
+router.delete('/departments/:id',authenticate, async (req, res) => {
   try {
     const { id } = req.params;
     await Department.findByIdAndDelete(id);

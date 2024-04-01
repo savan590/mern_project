@@ -17,7 +17,6 @@ app.set('view engine', 'ejs')
 app.use('/auth', authRoutes);
 app.use('/api', departmentRoutes);
 app.use('/employee',employeeRoutes)
-// Use other routes as needed
 
 const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
